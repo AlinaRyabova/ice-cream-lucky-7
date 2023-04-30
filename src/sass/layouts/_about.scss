@@ -1,4 +1,5 @@
 .section.about {
+  position: relative;
   justify-content: center;
   text-align: center;
   color: $modalBgdColor;
@@ -144,6 +145,9 @@
     display: flex;
     column-gap: 38px;
   }
+  @media screen and(min-width:768px) and (max-width:1199px) {
+    margin-bottom: 60px;
+  }
 }
 .about__button {
   font-weight: 600;
@@ -162,16 +166,14 @@
   margin-top: 10px;
   cursor: pointer;
 
-  @media screen and (max-width: 479px) {
+  @media screen and (max-width: 767px) {
     margin: 10px auto 50px;
   }
-
-  @media screen and (min-width: 480px) {
-    margin: 16px auto 60px;
-  }
-
   @media screen and (min-width: 768px) {
-    margin-top: 44px;
+    margin-top: 32px;
+  }
+  @media screen and (min-width: 1200px) {
+    margin-top: 54px;
   }
 }
 
@@ -203,11 +205,7 @@
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
-  background-image: linear-gradient(
-    0deg,
-    rgba(248, 210, 78, 0.7),
-    rgba(248, 210, 78, 0.7)
-  );
+  background-image: linear-gradient(0deg, rgba(248, 210, 78, 0.7), rgba(248, 210, 78, 0.7));
   background-color: $sldrDotColor;
   box-shadow: 0px 4.48583px 16.8218px rgba(153, 114, 23, 0.25);
   @media screen and (max-width: 767px) {
@@ -247,15 +245,24 @@
   background-position: center;
   background-repeat: no-repeat;
   position: absolute;
+  @extend %mainAnime;
   @media screen and (max-width: 767px) {
     width: 280px;
     position: relative;
     top: 22px;
+    &:hover {
+      transform: translateY(-22px);
+    }
+      
+    
   }
   @media screen and (min-width: 768px) {
     width: 330px;
     border-radius: 165px;
     top: 26px;
+    &:hover {
+        transform: translateY(-26px);
+      }
   }
   @media screen and (min-width: 1200px) {
     width: 490px;
@@ -263,6 +270,10 @@
     padding-right: 109px;
     border-radius: 250px;
     top: 39px;
+    &:hover {
+        transform: translateY(-39px);
+      }
+    
   }
 }
 
@@ -278,4 +289,7 @@
   @media screen and(min-width:1200px) {
     max-width: 490px;
   }
+}
+.about__button--svg{
+
 }
